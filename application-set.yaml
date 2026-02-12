@@ -25,7 +25,7 @@ spec:
           ref: values
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'hello-app'
+        namespace: 'poc'
       syncPolicy:
         automated:
           prune: true
