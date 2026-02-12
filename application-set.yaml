@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: test-app
+  name: poc
 spec:
   generators:
   - list:
@@ -9,7 +9,7 @@ spec:
       - env: test
   template:
     metadata:
-      name: 'test-app-{{env}}'
+      name: 'hello-app-{{env}}'
     spec:
       project: default
       sources:
@@ -25,7 +25,7 @@ spec:
           ref: values
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'test-app'
+        namespace: 'hello-app'
       syncPolicy:
         automated:
           prune: true
