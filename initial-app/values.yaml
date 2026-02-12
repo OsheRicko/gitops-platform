@@ -29,8 +29,11 @@ podAnnotations: {}
 podLabels: {}
 
 env:
-  - name: USER
-    value: "Guest"
+  - name: APP_USER
+    valueFrom:
+      secretKeyRef:
+        name: poc-k8s-secret
+        key: APP-USER-KV
 
 podSecurityContext: {}
   # fsGroup: 2000
